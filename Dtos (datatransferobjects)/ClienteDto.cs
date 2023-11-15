@@ -8,22 +8,25 @@ namespace ClasesYListas
 {
     internal class ClienteDto
     {
-        // Contendrá los atributos: campos o caracteristicas de este cliente
-        string nombreCliente;
+        // Contendrá los atributos: campos o caracteristicas de este cliente, son private por defecto
+        // se le asignan los valores por defecto
 
-         string apellidosCliente;
+        long idCliente; //PK 
+        string nombreCliente = "aaa";
 
-        string dniCliente;
+         string apellidosCliente = "aaa";
 
-        DateOnly fechaNacimientoCliente;
+        string dniCliente = "aaa"; //INIVOCO
 
-        string emailCliente;
+        string fechaNacimientoCliente = "9999/12/31"; // dateonly
 
-        int tlfCliente;
+        string emailCliente = "aaa";
 
-        DateOnly fechaAltaCliente;
+        int tlfCliente = 1111;
 
-        DateOnly fechaBajaCliente;
+        string fechaAltaCliente = "9999/12/31";
+
+        string fechaBajaCliente = "9999/12/31;
 
         public string NombreCliente { get => nombreCliente; set => nombreCliente = value; }
         public string ApellidosCliente { get => apellidosCliente; set => apellidosCliente = value; }
@@ -36,14 +39,18 @@ namespace ClasesYListas
 
         //métodos Get y Set
         // GET nos dará el valor del campo
+        // lo anterior ya nos da la caracterizacion de nuestor cliente
+        // es decir, nos da la estructura que nos identificará de forma univoca a cada cliente
 
         //Constructores, metodos que tiene una clase par ahacer el new, toda clase tendrá
         //un constructor por defecto, que será el consturctor vacío, que es el constructor por defecto
+        
         public ClienteDto()
         {
 
         }
 
+        // se hace con click derecho y seleccionamos generar constructor seleccionando solo los campos
         public ClienteDto(string nombreCliente, string dniCliente)
         {
             this.nombreCliente = nombreCliente;
@@ -58,6 +65,8 @@ namespace ClasesYListas
         //método ToString será el que transforme el objeto en toda la información sin necesidad de tener
         //que convertir al momento.PERMITE CONVERTIR TODA LA INFORMACION QUE HAY DENTRO DE LOS CAMPOS 
         // QUE HAYA DENTRO UN 
+       
+        override
         public  string toString()
         {
             string objetoString = this.nombreCliente + " "+ this.dniCliente;
